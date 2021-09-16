@@ -131,3 +131,7 @@ label {
   flex-direction: row;
   justify-content: space-between;
 }
+
+.signup {
+  margin-top: 50px;
+}
