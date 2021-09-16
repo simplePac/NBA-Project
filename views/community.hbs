@@ -16,7 +16,7 @@
             <input type="hidden" name="votedUser" value={{_id}} />
             <button type="submit">Vote</button>
           </form>
-          <p>{{votes.length}}</p>
+          <p class="votes">{{votes.length}}</p>
           {{#each favorites}}
             <div class="card shadow-sm">
               <p><b>Name: </b>{{first_name}} {{last_name}}</p>
