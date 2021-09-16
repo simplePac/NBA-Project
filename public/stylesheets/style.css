@@ -82,6 +82,7 @@ label {
 }
 
 .warning {
+  margin-top: 50px;
   width: 700px;
   color: white;
   background-color: rgb(189, 57, 57);
@@ -99,7 +100,7 @@ label {
 } */
 
 .card {
-  background-color: rgba(255, 255, 255, 0.70);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 3% 3% 0% 3%;
 }
 
