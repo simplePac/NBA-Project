@@ -5,7 +5,7 @@
   <div class="row row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5">
     {{#each players.data}}
       <div class="col">
-        <div class="card shadow-sm">
+        <div id="cpadding" class="card shadow-sm">
           <p><b>Name: </b>{{first_name}} {{last_name}}</p>
           <p><b>Position: </b>{{position}}</p>
           <p><b>Conference: </b>{{team.conference}}</p>
@@ -32,7 +32,7 @@
               hidden
               value="{{team.full_name}}"
             />
-            <button type="submit">Add Favorites</button>
+            <button class="button-fav btn btn-dark" type="submit">Add Favorites</button>
           </form>
         </div>
       </div>
