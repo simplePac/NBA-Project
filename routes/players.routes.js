@@ -57,7 +57,7 @@ router.get("/community", isLoggedIn, (req, res) => {
   User.find()
     .populate("favorites")
     .then((users) => {
-      res.render("community", { users, userInSession : req.user });
+      res.render("community", { users, userInSession: req.user });
     });
 });
 
@@ -77,24 +77,25 @@ router.post("/no-community", (req, res) => {
 });
 
 router.post("/voteUp", (req, res) => {
-  User.findById(req.body.votedUser)
-  .then((user) => {
-    if(user.votes.includes(req.body.loggedUser)) {
-      res.redirect("community")
+  User.findById(req.body.votedUser).then((user) => {
+    if (user.votes.includes(req.body.loggedUser)) {
+      res.redirect("community");
     } else {
-      User.findByIdAndUpdate(req.body.votedUser, {$push: {votes: req.body.loggedUser}})
-      .then((user) => {
-        res.redirect("community")
-      })
+      User.findByIdAndUpdate(req.body.votedUser, {
+        $push: { votes: req.body.loggedUser },
+      }).then((user) => {
+        res.redirect("community");
+      });
     }
-  })
-})
+  });
+});
 
 //Añade favoritos a mi Usuario
 router.post("/add-favorite", isLoggedIn, (req, res) => {
   // console.log(req.body);
-  const query = ({ first_name, last_name, position, apiId } = req.body);
+  const { first_name, last_name, position, apiId } = req.body;
   const team = ({ conference, full_name } = req.body);
+  const query = { first_name, last_name, position, apiId, team };
 
   const idToCheck = req.body.apiId;
 
