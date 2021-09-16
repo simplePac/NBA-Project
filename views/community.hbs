@@ -14,7 +14,7 @@
               value={{userInSession._id}}
             />
             <input type="hidden" name="votedUser" value={{_id}} />
-            <button type="submit">Vote</button>
+            <button class="btn btn-light" type="submit">Vote</button>
           </form>
           <p class="votes">{{votes.length}}</p>
           {{#each favorites}}
