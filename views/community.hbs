@@ -7,6 +7,16 @@
       {{#if public}}
         <div class="col">
           <h2 class="community-user">User: {{username}}</h2>
+          <form action="/voteUp" method="POST">
+            <input
+              type="hidden"
+              name="loggedUser"
+              value={{userInSession._id}}
+            />
+            <input type="hidden" name="votedUser" value={{_id}} />
+            <button type="submit">Vote</button>
+          </form>
+          <p>{{votes.length}}</p>
           {{#each favorites}}
             <div class="card shadow-sm">
               <p><b>Name: </b>{{first_name}} {{last_name}}</p>

@@ -8,7 +8,8 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Player"
   }], //Referencias de ola BBDD players
-  public: Boolean
+  public: Boolean,
+  votes: [String]
 });
 
 const User = model("User", userSchema);

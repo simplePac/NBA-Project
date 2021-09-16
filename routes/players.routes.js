@@ -57,7 +57,7 @@ router.get("/community", isLoggedIn, (req, res) => {
   User.find()
     .populate("favorites")
     .then((users) => {
-      res.render("community", { users });
+      res.render("community", { users, userInSession : req.user });
     });
 });
 
@@ -75,6 +75,20 @@ router.post("/no-community", (req, res) => {
     res.redirect("community");
   });
 });
+
+router.post("/voteUp", (req, res) => {
+  User.findById(req.body.votedUser)
+  .then((user) => {
+    if(user.votes.includes(req.body.loggedUser)) {
+      res.redirect("community")
+    } else {
+      User.findByIdAndUpdate(req.body.votedUser, {$push: {votes: req.body.loggedUser}})
+      .then((user) => {
+        res.redirect("community")
+      })
+    }
+  })
+})
 
 //Añade favoritos a mi Usuario
 router.post("/add-favorite", isLoggedIn, (req, res) => {
