@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="container-h1">
+    <h1>NBA Players</h1>
+  </div>
+  <div class="row row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5">
+    {{#each players.data}}
+      <div class="col">
+        <div class="card shadow-sm">
+          <p><b>Name: </b>{{first_name}} {{last_name}}</p>
+          <p><b>Position: </b>{{position}}</p>
+          <p><b>Conference: </b>{{team.conference}}</p>
+          <p><b>Team: </b>{{team.full_name}}</p>
+          <form action="/add-favorite" method="POST">
+            <input
+              type="text"
+              name="first_name"
+              hidden
+              value="{{first_name}}"
+            />
+            <input type="text" name="last_name" hidden value="{{last_name}}" />
+            <input type="text" name="position" hidden value="{{position}}" />
+            <input type="id" name="apiId" hidden value="{{id}}" />
+            <input
+              type="text"
+              name="conference"
+              hidden
+              value="{{team.conference}}"
+            />
+            <input
+              type="text"
+              name="full_name"
+              hidden
+              value="{{team.full_name}}"
+            />
+            <button type="submit">Add Favorites</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <a href="/players/{{page}}/previous">Previous</a>
+  <a href="/players/{{page}}/next">Next</a>
+</div>

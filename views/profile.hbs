@@ -1,0 +1,34 @@
+<div class="profile-advice">
+  <p>You can only pick 5 players</p>
+</div>
+<div class="container">
+  <div class="profile-title">
+    <h1>Welcome {{user.username}}</h1>
+  </div>
+  <div class="row row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5">
+    {{#each user.favorites}}
+      <div class="col">
+        <div class="card shadow-sm">
+          <p><b>Name: </b>{{first_name}} {{last_name}}</p>
+          <p><b>Position: </b>{{position}}</p>
+          <p><b>Conference: </b>{{team.conference}}</p>
+          <p><b>Team: </b>{{team.full_name}}</p>
+          <form action="/delete-favorite" method="POST">
+            <input type="hidden" name="id" value="{{_id}}" />
+            <button type="submit">Detele Favorite</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div class="profile-form">
+    <form class="profile-form2" action="/no-community" method="POST">
+      <input type="hidden" name="id" value="{{user._id}}" />
+      <button type="submit">Stop Sharing</button>
+    </form>
+    <form class="profile-form1" action="/community" method="POST">
+      <input type="hidden" name="id" value="{{user._id}}" />
+      <button type="submit">Share</button>
+    </form>
+  </div>
+</div>

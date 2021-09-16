@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="container-h1">
+    <h1>Community</h1>
+  </div>
+  <div class="row row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5 my-5">
+    {{#each users}}
+      {{#if public}}
+        <div class="col">
+          <h2 class="community-user">User: {{username}}</h2>
+          {{#each favorites}}
+            <div class="card shadow-sm">
+              <p><b>Name: </b>{{first_name}} {{last_name}}</p>
+              <p><b>Position: </b>{{position}}</p>
+              <p><b>Conference: </b>{{team.conference}}</p>
+              <p><b>Team: </b>{{team.full_name}}</p>
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+    {{/each}}
+  </div>
+</div>

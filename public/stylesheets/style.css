@@ -1,0 +1,97 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/UiA1t25.jpg");
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+.player {
+  background-color: lightgreen;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  flex-direction: column;
+}
+
+.mainTitle {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 7%;
+  text-align: center;
+  width: 55%;
+  font-size: 60px;
+}
+
+.mainIntro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 40%;
+  border: 3px solid black;
+  border-radius: 7%;
+  background-color: white;
+  margin-top: 100px;
+  font-size: 35px;
+}
+
+.container-h1 {
+  background-color: white;
+  margin-top: 50px;
+  width: 240px;
+  border: 3px solid black;
+}
+
+label {
+  color: white;
+}
+
+.profile-title {
+  background-color: white;
+  width: 25%;
+  border: 3px solid black;
+  margin-top: 50px;
+}
+
+.community-user {
+  color: white;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-form2 {
+  margin-right: 10px;
+}
+
+.profile-form1 {
+  margin-left: 10px;
+}
+
+.warning {
+  width: 700px;
+  color: white;
+  background-color: rgb(189, 57, 57);
+}
+
+.profile-advice {
+  background-color: rgb(189, 57, 57);
+  width: 250px;
+  font-size: 20px;
+  color: white;
+}
